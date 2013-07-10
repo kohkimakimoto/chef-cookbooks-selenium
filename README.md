@@ -1,7 +1,5 @@
 # Chef cookbooks selenium
 
-## Description
-
 Chef cookbook to install selenium server.
 
 ## Synopsis
