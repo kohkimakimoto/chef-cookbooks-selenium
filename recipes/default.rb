@@ -31,6 +31,10 @@ template "/etc/init.d/selenium" do
   mode "0755"
 end
 
+service "selenium" do
+  action [ :disable ]
+end
+
 # logrotate
 template "/etc/logrotate.d/selenium" do
   source "logrotate.d/selenium.erb"
@@ -38,7 +42,6 @@ template "/etc/logrotate.d/selenium" do
   group "root"
   mode "0644"
 end
-
 
 # xorg-x11-server-Xvfb
 package "xorg-x11-server-Xvfb" do
@@ -51,6 +54,10 @@ template "/etc/init.d/xvfb" do
   owner "root"
   group "root"
   mode "0755"
+end
+
+service "xvfb" do
+  action [ :disable ]
 end
 
 template "/etc/logrotate.d/xvfb" do
